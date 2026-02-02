@@ -1,6 +1,7 @@
 'use strict';
 
-<<<<<<< HEAD
+// Завдання 1
+
 const book1 = new Book(
   'J. K. Rowling',
   'Harry Potter and the Chamber of secrets',
@@ -24,7 +25,9 @@ console.table(user1);
 console.log(book1.isVacant());
 book1.getRent(user1.id);
 console.log(book1.isVacant());
-=======
+
+// Завдання 2
+
 const wolf1 = new Wolf(10, 'peaceful', true);
 console.table(wolf1);
 const wolf2 = new Wolf(15, 'agressive', false);
@@ -52,4 +55,3 @@ console.log(Animal.prototype.growl !== tiger1.growl); // НЕ перевизна
 console.log(Animal.prototype.hunting !== tiger1.hunting); // перевизначено в дочірньому
 console.log(Animal.prototype.growl !== wolf1.growl); // перевизначено в дочірньому
 console.log(Animal.prototype.hunting !== wolf1.hunting); // перевизначено в дочірньому
->>>>>>> second-exercise
