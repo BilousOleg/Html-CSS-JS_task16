@@ -4,15 +4,76 @@ class Book {
     this.title = title;
     this.year = yearOfWriting;
     this.pages = pagesCount;
-    this._shelf = shelfNumber;
+    this.shelf = shelfNumber;
     this._userId = null; // спочатку книга стоїть на полиці, і ніхто її не читає
   }
+
+  set author(value) {
+    checkType(value, 'string');
+    checkStringEmpty(value);
+    this._author = value.trim();
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  set title(value) {
+    checkType(value, 'string');
+    checkStringEmpty(value);
+    this._title = value.trim();
+  }
+
+  get title() {
+    return this._title;
+  }
+
+  set year(value) {
+    checkType(value, 'number');
+    checkNumberRange(value, 0);
+    this._year = value;
+  }
+
+  get year() {
+    return this._year;
+  }
+
+  set pages(value) {
+    checkType(value, 'number');
+    checkNumberRange(value, 1);
+    this._pages = value;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+
+  set shelf(value) {
+    checkType(value, 'number');
+    checkNumberRange(value, 1);
+    this._shelf = value;
+  }
+
+  get shelf() {
+    return this._shelf;
+  }
+
+  set userId(value) {
+    checkType(value, 'number');
+    checkNumberRange(value, 0);
+    this._userId = value;
+  }
+
+  get userId() {
+    return this._userId;
+  }
+
   isVacant() {
     return this._shelf !== null && this._userId === null;
   }
   getRent(id) {
     this._shelf = null;
-    this._userId = id;
+    this.userId = id;
   }
   // Сюди б ще метод для повернення книги, встановлення this._shelf на вказаний в аргументі і this._userId = null,
   // але тоді треба ще створити об'єкт цілої бібліотеки для збереження вільних полиць і перевіряти на це в методі
