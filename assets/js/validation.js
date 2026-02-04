@@ -1,0 +1,23 @@
+'use strict';
+// Вирішив винести валідацію в окремі три функції, бо:
+// По-перше, це декларативний підхід, який спрощує і оптимізує код
+// По-друге, їх три, тому що кожна виконує свою окрему перевірку, тобто відповідає за щось одне
+function checkType(value, type) {
+  if (typeof value !== type) {
+    throw new TypeError(`type of value must be ${type}`);
+  }
+}
+
+function checkStringEmpty(value) {
+  if (value.trim().length === 0) {
+    throw new Error('string value must be non-empty');
+  }
+}
+
+function checkNumberRange(value, range) {
+  if (!Number.isSafeInteger(value) || value < range) {
+    throw new RangeError(
+      `${value} must be a safe, no less than ${range} integer`,
+    );
+  }
+}
