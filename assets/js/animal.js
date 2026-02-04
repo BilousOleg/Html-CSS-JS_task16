@@ -27,8 +27,7 @@ class Animal {
 
   set mood(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._mood = value.trim();
+    this._mood = checkStringEmpty(value);
   }
 
   get mood() {
