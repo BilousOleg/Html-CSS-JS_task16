@@ -19,8 +19,7 @@ class User {
 
   set firstName(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._firstName = value.trim();
+    this._firstName = checkStringEmpty(value);
   }
 
   get firstName() {
@@ -29,8 +28,7 @@ class User {
 
   set lastName(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._lastName = value.trim();
+    this._lastName = checkStringEmpty(value);
   }
 
   get lastName() {
@@ -39,26 +37,22 @@ class User {
 
   set street(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._street = value.trim();
+    this._street = checkStringEmpty(value);
   }
 
   set city(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._city = value.trim();
+    this._city = checkStringEmpty(value);
   }
 
   set country(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._country = value.trim();
+    this._country = checkStringEmpty(value);
   }
 
   set state(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._state = value.trim();
+    this._state = checkStringEmpty(value);
   }
 
   get address() {
