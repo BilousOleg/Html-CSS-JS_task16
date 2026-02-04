@@ -10,8 +10,7 @@ class Book {
 
   set author(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._author = value.trim();
+    this._author = checkStringEmpty(value);
   }
 
   get author() {
@@ -20,8 +19,7 @@ class Book {
 
   set title(value) {
     checkType(value, 'string');
-    checkStringEmpty(value);
-    this._title = value.trim();
+    this._title = checkStringEmpty(value);
   }
 
   get title() {

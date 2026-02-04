@@ -9,15 +9,17 @@ function checkType(value, type) {
 }
 
 function checkStringEmpty(value) {
-  if (value.trim().length === 0) {
+  value = value.trim();
+  if (value.length === 0) {
     throw new Error('string value must be non-empty');
   }
+  return value;
 }
 
 function checkNumberRange(value, range) {
   if (!Number.isSafeInteger(value) || value < range) {
     throw new RangeError(
-      `${value} must be a safe, no less than ${range} integer`,
+      `${value} must be a safe, no less than ${range} integer`
     );
   }
 }
