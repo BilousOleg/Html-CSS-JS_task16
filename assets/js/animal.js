@@ -16,11 +16,8 @@ class Animal {
   }
 
   set age(value) {
-    if (typeof value !== 'number') {
-      throw new TypeError('age must be a number value');
-    } else if (!Number.isSafeInteger(value) || value < 0) {
-      throw new RangeError('age must be a safe, non-negative integer');
-    }
+    checkType(value, 'number');
+    checkNumberRange(value, 0);
     this._age = value;
   }
 
@@ -29,11 +26,8 @@ class Animal {
   }
 
   set mood(value) {
-    if (typeof value !== 'string') {
-      throw new TypeError('mood must be a string value');
-    } else if (value.trim().length === 0) {
-      throw new Error('length of mood value must be greater than 0');
-    }
+    checkType(value, 'string');
+    checkStringEmpty(value);
     this._mood = value.trim();
   }
 
@@ -56,9 +50,7 @@ class Wolf extends Animal {
   }
 
   set isAlpha(value) {
-    if (typeof value !== 'boolean') {
-      throw new TypeError('isAlpha must be a boolean value');
-    }
+    checkType(value, 'boolean');
     this._isAlpha = value;
   }
 
