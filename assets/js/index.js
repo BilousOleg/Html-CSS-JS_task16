@@ -6,7 +6,7 @@ try {
     'Harry Potter and the Chamber of secrets',
     1998,
     352,
-    12
+    12,
   );
 
   console.table(book1);

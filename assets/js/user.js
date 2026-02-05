@@ -1,6 +1,6 @@
 class User {
   constructor(firstName, lastName, address) {
-    this._id = User.counter++; // Використання статичної властивості для автоматичного визначення унікального id (збільшення через постфіксний інкремент)
+    this._id = User.#counter++; // Використання статичної властивості для автоматичного визначення унікального id (збільшення через постфіксний інкремент)
     this.firstName = firstName;
     this.lastName = lastName;
     ({
@@ -11,7 +11,7 @@ class User {
     } = address);
   }
 
-  static counter = 0;
+  static #counter = 1;
 
   get id() {
     return this._id;
